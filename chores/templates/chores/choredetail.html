@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block primary %}
+<h1>{{ chore }}</h1>
+
+{% if error_message %}
+	<p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+<p>Due Date: {{chore.due_date}}</p>
+<form action="/chores/{{chorelist.id}}/chores/{{chore.id}}/update/" method="post">
+	{% csrf_token %}
+	{% if chore.complete %}
+		<input type="checkbox" name="complete" id="complete" value="{{chore.id}}" checked />
+	{% else %}
+		<input type="checkbox" name="complete" id="complete" value="{{chore.id}}" />
+	{% endif %}
+	
+	<label for="complete">Is Complete</label><br/><br/>
+	<input class="btn btn-primary"  type="submit" value="Update"/>
+</form>
+{% endblock %}

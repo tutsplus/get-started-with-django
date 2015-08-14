@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block primary %}
+<h1>{{ chorelist }}</h1>
+
+<ul class="list-group">
+	{% for chore in chorelist.chore_set.all %}
+		<li class="list-group-item"><a href="/chores/{{chorelist.id}}/chores/{{chore.id}}">{{chore}}</a></li>
+	{% endfor %}
+</ul>
+
+<a type="button" class="btn btn-warning"  href="/chores/{{chorelist.id}}/delete">Delete List</a>
+<br/><br/>
+<a type="button" class="btn btn-primary"  href="/chores/{{chorelist.id}}/addchore">Add Chore</a>
+{% endblock %}

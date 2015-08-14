@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block primary %}
+<h1>New List</h1>
+
+<form action="/chores/newlist/" method="post">
+	{% csrf_token %}
+	<label for="name">List Name</label>
+	<input type="textbox" name="name" id="name" placeholder="Enter a name" />
+	<br/><br/>
+	<label for="duedate">Due Date</label>
+	<input type="datetime-local" name="duedate" id="duedate" />
+	<br/><br/>
+	<input class="btn btn-primary"  type="submit" value="Create"/>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block primary %}
+<h1>Family Chore Lists</h1>
+
+{% if chorelists %}
+	<ul class="list-group">
+		{% for chorelist in chorelists %}
+			<li class="list-group-item"><a href="/chores/{{chorelist.id}}/">{{chorelist.name}}</a></li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No chorelists are currently avaialble</p>
+{% endif %}
+<br />
+<a type="button" class="btn btn-primary" href="/chores/newlist">Create List<a>
+{% endblock %}
