@@ -16,5 +16,5 @@ These are source files for the Tuts+ course: [Get Started With Django][published
 
 Available on [Tuts+](https://tutsplus.com). Teaching skills to millions worldwide.
 
-[published url]: https://code.tutsplus.com/courses/get-started-with-django
+[published url]: https://code.tutsplus.com/courses/getting-started-with-django
 [instructor url]: https://tutsplus.com/authors/derek-jensen
